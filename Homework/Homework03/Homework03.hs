@@ -26,11 +26,10 @@ electricalConsumption' c a
             excess = "You are" ++ show (a - c) ++ " over your limit"
             savings = "You have saved " ++ show (a - c) ++ " this cycle"
 
-
-
 -- Question 3
 -- Write a function that showcases the advantages of using let expressions to split a big expression into smaller ones.
 -- Then, share it with other students in Canvas.
+
 
 
 -- Question 4
