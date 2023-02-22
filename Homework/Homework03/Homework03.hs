@@ -4,6 +4,11 @@
 -- The function has to take the hourly consumption of an electrical device, the hours of daily use, and the maximum monthly consumption allowed.
 -- (Monthly usage = consumption (kW) * hours of daily use (h) * 30 days).
 
+electricalConsumption :: Int -> Int -> String
+electricalConsumption c a
+    | c > a = "You are over your limit"
+    | c < a = "You are still ok"
+    | otherwise = "There seems to be an error, please check your inputs."
 
 -- Question 2
 -- Prelude:
@@ -11,6 +16,16 @@
 -- So `show 3` will produce `"3"` and `show (3 > 2)` will produce `"True"`.
 
 -- In the previous function, return the excess/savings of consumption as part of the message.
+
+electricalConsumption' :: Int -> Int -> String
+electricalConsumption' c a
+    | c > a = excess
+    | c < a = savings
+    | otherwise = "There seems to be an error, please check your inputs"
+        where
+            excess = "You are" ++ show (a - c) ++ " over your limit"
+            savings = "You have saved " ++ show (a - c) ++ " this cycle"
+
 
 
 -- Question 3
@@ -27,4 +42,4 @@
 -- Question 5
 -- Write a function that takes in two numbers and calculates the sum of squares for the product and quotient
 -- of those numbers. Write the function such that you use a where block inside a let expression and a
--- let expression inside a where block. 
+-- let expression inside a where block.
